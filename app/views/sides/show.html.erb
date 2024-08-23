@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @side %>
+
+<div>
+  <%= link_to "Edit this side", edit_side_path(@side) %> |
+  <%= link_to "Back to sides", sides_path %>
+
+  <%= button_to "Destroy this side", @side, method: :delete %>
+</div>

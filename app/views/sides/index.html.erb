@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Sides" %>
+
+<h1>Sides</h1>
+
+<div id="sides">
+  <% @sides.each do |side| %>
+    <%= render side %>
+    <p>
+      <%= link_to "Show this side", side %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New side", new_side_path %>

@@ -23,7 +23,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:password@db:5432/foodpack
       RAILS_ENV: development
-      BUNDLE_WITHOUT: ""
+      BUNDLE_PATH: "/usr/local/bundle"
 
 volumes:
   pgdata:

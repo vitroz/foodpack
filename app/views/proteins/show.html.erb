@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @protein %>
+
+<div>
+  <%= link_to "Edit this protein", edit_protein_path(@protein) %> |
+  <%= link_to "Back to proteins", proteins_path %>
+
+  <%= button_to "Destroy this protein", @protein, method: :delete %>
+</div>
