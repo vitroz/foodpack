@@ -1,46 +1,33 @@
+
+
 <div id="<%= dom_id client %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">First Name:</strong>
-    <%= client.first_name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Last Name:</strong>
-    <%= client.last_name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Birthday:</strong>
-    <%= client.birthday %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Social media:</strong>
-    <%= client.social_media %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Addresses</strong>
-  </p>
 
 
-  <% client.addresses.each do |address| %>
-
-    <ul role="list" class="divide-y divide-gray-100">
-      <li class="flex justify-between gap-x-6 py-5">
-        <div class="flex min-w-0 gap-x-4">
-          <div class="min-w-0 flex-auto">
-            <p class="text-sm font-semibold leading-6 text-gray-900"><%= address.street %></p>
-            <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%= address.location_number %></p>
-            <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%= address.postal_code %></p>
-          </div>
-        </div>
-        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-          <p class="text-sm leading-6 text-gray-900"><%= address.state %></p>
-          <p class="mt-1 text-xs leading-5 text-gray-500"><%= address.city %></p>
-        </div>
-      </li>
-    </ul>
-
+  <ul role="list" class="divide-y divide-gray-100">
+  <%= link_to client, class: "block" do %>
+    <li class="flex justify-between mt-3 py-5 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+      <div class="min-w-0">
+        <p class="pl-6 text-sm font-semibold text-gray-900">
+          First Name
+          <p class="pl-6 text-sm leading-6 text-gray-900"> <%= client.first_name %></p>
+        </p>
+        <p class="pl-6 text-sm font-semibold text-gray-900">
+          Last Name
+          <p class="pl-6 text-sm leading-6 text-gray-900"> <%= client.last_name %></p>
+        </p>
+      </div>
+      <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+        <p class="pr-6 text-sm font-semibold text-gray-900">
+          Birthday
+          <p class="pr-6 text-sm leading-6 text-gray-900"> <%= client.birthday %></p>
+        </p>
+        <p class="pr-6 text-sm font-semibold text-gray-900">
+          Social Media
+          <p class="pr-6 text-sm leading-6 text-gray-900"> <%= client.social_media %></p>
+        </p>
+      </div>
+    </li>
   <% end %>
+  </ul>
+
 </div>

@@ -6,6 +6,31 @@
 
     <%= render @client %>
 
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Addresses</strong>
+    </p>
+
+    <% @client.addresses.each do |address| %>
+
+      <ul role="list" class="divide-y divide-gray-100">
+        <%= link_to address, class: "block" do %>
+          <li class="flex justify-between mt-3 py-5 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+            <div class="min-w-0">
+              <p class="pl-6 text-sm font-semibold leading-6 text-gray-900"><%= address.address_type %></p>
+              <p class="pl-6 font-semibold leading-5 text-gray-900"><%= address.street %></p>
+              <p class="pl-6 mt-2 truncate text-sm leading-5 text-gray-500"><%= address.location_number %></p>
+              <p class="pl-6 mt-1 truncate text-sm leading-5 text-gray-500"><%= address.postal_code %></p>
+            </div>
+            <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+              <p class="pr-6 text-sm leading-6 text-gray-900"><%= address.state %></p>
+              <p class="pr-6 mt-1 text-xs leading-5 text-gray-500"><%= address.city %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+
+    <% end %>
+
     <%= link_to "Edit this client", edit_client_path(@client), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to "Back to clients", clients_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">

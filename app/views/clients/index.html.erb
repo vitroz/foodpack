@@ -13,9 +13,6 @@
   <div id="clients" class="min-w-full">
     <% @clients.each do |client| %>
       <%= render client %>
-      <p>
-        <%= link_to "Show this client", client, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
     <% end %>
   </div>
 </div>
