@@ -2,7 +2,7 @@
 
 ## To install dependencies run
 
-docker-compose run web bundle install
+docker-compose run foodpack bundle install
 
 ## To run commands
-docker-compose run web bundle exec rails <command>
+docker-compose run foodpack bundle exec rails <command>
