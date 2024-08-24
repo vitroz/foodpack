@@ -14,4 +14,6 @@ COPY Gemfile.lock /foodpack/Gemfile.lock
 RUN bundle update --bundler
 RUN bundle install
 
+ENV RAILS_ENV=development
+
 CMD bash
